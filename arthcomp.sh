@@ -19,3 +19,12 @@ result[third_computation]=$third_computation
 result[fourth_computation]=$fourth_computation
 
 echo ${result[@]}
+
+
+index=0
+for computation in ${!result[@]}
+do
+    echo "$computation = ${result[$computation]}"
+    array[index++]=${result[$computation]}
+done
+echo ${array[@]}
